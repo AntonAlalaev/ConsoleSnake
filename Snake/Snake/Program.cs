@@ -14,16 +14,19 @@ namespace Snake
             //Console.SetBufferSize( 80, 24);
             Console.SetWindowSize(80,25);
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
+            Draw(upLine);
             HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
-            downLine.Draw();
-            upLine.Draw();
+            Draw(downLine);
+            
             VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
             VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
-            leftLine.Draw();
-            rightLine.Draw();
+            Draw(leftLine);
+            Draw(rightLine);
+            
             Point p = new Point(10, 5, '*');
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Draw();
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            Snake snake = (Snake)fSnake;
 
             FoodCreator foodCreator = new FoodCreator(78, 24, '$');
             Point food = foodCreator.CreateFood();
@@ -49,6 +52,11 @@ namespace Snake
                 }
             }
             //Console.ReadKey();
+        }
+
+        static void Draw(Figure figure)
+        {
+            figure.Draw();
         }
 
     }
