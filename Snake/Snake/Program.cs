@@ -10,10 +10,10 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
-            List<Point> pointList = new List<Point>();
-
+            HorizontalLine hLine = new HorizontalLine(5, 10, 8, '*');
+            hLine.Draw();
+            VerticalLine vLine = new VerticalLine(3, 15, 10, '#');
+            vLine.Draw();
             Console.ReadKey();
         }
 
