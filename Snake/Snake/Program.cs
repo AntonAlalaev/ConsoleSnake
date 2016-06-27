@@ -12,7 +12,7 @@ namespace Snake
         {
             Point p1 = new Point(1, 3, '*');
             p1.Draw();
-
+            List<Point> pointList = new List<Point>();
 
             Console.ReadKey();
         }
